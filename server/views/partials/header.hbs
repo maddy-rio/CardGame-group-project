@@ -7,13 +7,14 @@
     <div class='header-buttons'>
       {{#if user}}
         <button onclick="location.href='/logout';">Login Out</button>
-
       {{else}}
-
         <button onclick="location.href='/login';">Login</button>
       {{/if}}
       <button onclick="location.href='/joinGame';">Join Game</button>
       <button onclick="location.href='/gameRoomPage';">Create Game Room</button>
+      {{#if user}}
+        <p>Welcome {{user.name}} !</p>
+      {{/if}}
     </div>
   </div>
 </header>
