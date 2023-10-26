@@ -9,8 +9,6 @@ router.get('/', async (req, res) => {
   try {
     const cards = await db.getCards()
     console.log(cards);
-
-    // also send the black card details 
     const card = {
       id: 100,
       phrase: 'hello world',
