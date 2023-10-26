@@ -142,34 +142,6 @@ body {
   margin: 0 auto;
 }
 
-.header {
-  /* margin-top: 10vh; */
-  /* display: flex; */
-  display: grid;
-  justify-content: center;
-  grid-template-columns: fit-content(100%);
-  align-items: center;
-  width: 60vw;
-
-  padding: auto;
-  margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-
-  background-color: rgb(48, 22, 9);
-  color: white;
-  padding-inline: 1rem;
-}
-
-.header__links {
-}
-
-.header_link {
-  text-decoration: none;
-  color: white;
-  font-size: 24px;
-}
-
 .formGrid {
   display: grid;
   margin-top: 3rem;

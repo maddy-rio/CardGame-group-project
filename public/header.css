@@ -1,0 +1,36 @@
+.header {
+  /* margin-top: 10vh; */
+  /* display: flex; */
+  display: grid;
+  justify-content: center;
+  grid-template-columns: fit-content(100%);
+  align-items: center;
+  width: 60vw;
+
+  padding: auto;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+
+  background-color: rgb(48, 22, 9);
+  color: white;
+  padding-inline: 1rem;
+}
+
+.header__text {
+
+}
+.aTagTitle {
+
+}
+.header__links {
+
+}
+.header-buttons {
+
+}
+
+
+
+
+
