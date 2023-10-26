@@ -6,7 +6,12 @@ const config = knexfile[environment]
 export const connection = knex(config)
 
 export async function getCards() {
-  return connection('start-card').select()
+  const numberOfEntries = 3
+  const randomEntries = await connection('start-card')
+    .select()
+    .orderByRaw('RANDOM()')
+    .limit(numberOfEntries)
+  return randomEntries
 }
 
 export async function getAnswers() {
