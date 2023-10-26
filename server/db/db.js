@@ -6,7 +6,7 @@ const config = knexfile[environment]
 export const connection = knex(config)
 
 export async function getCards() {
-  const numberOfEntries = 3
+  const numberOfEntries = 1
   const randomEntries = await connection('start-card')
     .select()
     .orderByRaw('RANDOM()')
@@ -15,5 +15,10 @@ export async function getCards() {
 }
 
 export async function getAnswers() {
-  return connection('answers').select()
+  const numberOfEntries = 3
+  const randomEntries = await connection('answers')
+    .select()
+    .orderByRaw('RANDOM()')
+    .limit(numberOfEntries)
+  return randomEntries
 }
