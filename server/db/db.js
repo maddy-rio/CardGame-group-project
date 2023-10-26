@@ -15,7 +15,7 @@ export async function getCards() {
 }
 
 export async function getAnswers() {
-  const numberOfEntries = 3
+  const numberOfEntries = 4
   const randomEntries = await connection('answers')
     .select()
     .orderByRaw('RANDOM()')

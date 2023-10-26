@@ -37,10 +37,24 @@ router.get('/', async (req, res) => {
 //Answers route
 router.get('/answers', async (req, res) => {
   try {
-    const cards = await db.getCards()
-    // res.render('index', { cards })
-    const answers = await db.getAnswers()
-    res.render('girls-temp', { cards, answers })
+    const data1 = await db.getCards()
+    const blackCard = data1[0]
+
+    const data2 = await db.getAnswers()
+    console.log(data2);
+    const whiteCards = await db.getAnswers()
+
+
+    //  id phrase
+    // [
+    //   {
+    //     id: 36,
+    //     phrase: 'My coding skills are like a fine wine, they get better with __________.'
+    //   }
+    // ]
+    
+    //  id response
+    res.render('game', { blackCard, whiteCards })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
