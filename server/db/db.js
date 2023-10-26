@@ -20,14 +20,15 @@ export async function getAnswers() {
 
 export async function createGameRoom(data) {
   console.log(data)
-  const newData = {
-    ...data,
-    currentRound: 0,
-    totalRounds: data.rounds,
-    name: data.name,
-    password: data.password,
-    numberOfPlayers: 0,
-  }
+  return connection('gameRooms').insert(data)
+}
 
-  return connection('gameRooms').insert(newData)
+export async function addPlayerToGameRoom(user, gameRoomId) {
+  const data = {
+    unqiueId: user.sub,
+    gameRoomId: gameRoomId,
+    username: user.name,
+    playerDoneMove: false,
+  }
+  return connection('player').insert(data)
 }

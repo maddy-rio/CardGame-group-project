@@ -7,6 +7,7 @@ export async function up(knex) {
     table.string('name')
     table.string('password')
     table.integer('numberOfPlayers')
+    table.string('createdBy')
     table.timestamp('created_at').defaultTo(knex.fn.now())
   })
 
