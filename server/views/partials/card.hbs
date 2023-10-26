@@ -1,14 +1,13 @@
-{{!-- EACH CARD NEEDS TO POINT TO ENDPOINT | UPDATES THE DATABASE SESSION --}}
-{{!-- 
-
-ID
-USER
-TEXT
-
- --}}
-
-<div class="card">
-  <div class="card__text">
-    <p>{{card_answer}}</p>
+<a class='hand__link' href='/answers/{{id}}'>
+  <p>{{description}}</p>
+  <div class='card'>
+    <div class='card__text'>
+      <p>{{id}}</p>
+      <p>{{phrase}}</p>
+      <div class='card__emblem'>
+        <div class='blk_box'></div>
+        <span>SQLightmare</span>
+      </div>
+    </div>
   </div>
-</div>
+</a>

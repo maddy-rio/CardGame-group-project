@@ -8,7 +8,8 @@ const router = express.Router()
 router.get('/', async (req, res) => {
   try {
     const cards = await db.getCards()
-    res.render('index', { cards })
+    console.log(cards);
+    res.render('game', { cards })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
@@ -19,62 +20,6 @@ router.get('/answers', async (req, res) => {
   try {
     const answers = await db.getAnswers()
     res.render('test', { answers })
-  } catch (err) {
-    res.status(500).send('DATABASE ERROR: ' + err.message)
-  }
-})
-
-router.get('/murrays-test-endpoint', async (req, res) => {
-  try {
-    // const data = {
-    //   cardInPlay: {
-    //     card_answer: 'test'
-    //   },
-    // }
-    const card = [
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-      {
-        description: 'test',
-        id: 'id',
-      },
-    ]
-    res.render('game', {card})
-  } catch (err) {
-    res.status(500).send('DATABASE ERROR: ' + err.message)
-  }
-})
-
-router.get('/murrays-test-endpoint2', async (req, res) => {
-  try {
-    const data = {
-      cardInPlay: {
-        card_answer: 'test',
-      },
-    }
-    res.render('grid')
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }

@@ -1,7 +1,3 @@
-{{! ACCEPT ARRAY OF OBJECTS EACH OBJECT REQ: XX }}
-
-{{!-- <h1>Welcome to the game</h1> --}}
-
 <div class="grid-test">
   <div class="grid-left">
     <div class="card card-opponent card-disabled"></div>
@@ -26,18 +22,8 @@
   <div class="grid-bottom">
     <div class='hand'>
       <div class='hand__cards'>
-        {{#each card}}
-          <p>{{description}}</p>
-          <div class='card'>
-            <div class='card__text'>
-              <p>Before I got my job, I had to endure a grueling interview process,
-                which included answering questions about ____________.</p>
-              <div class='card__emblem'>
-                <div class='blk_box'></div>
-                <span>SQLightmare</span>
-              </div>
-            </div>
-          </div>
+        {{#each cards}}
+            {{>card}}
         {{/each}}
     </div>
   <hr>

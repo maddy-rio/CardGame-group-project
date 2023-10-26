@@ -105,6 +105,10 @@ body {
   /* margin-bottom:0rem; */
 }
 
+.hand__link {
+  text-decoration: none;
+}
+
 .hand__header {
   display: flex;
   justify-content: space-between;
