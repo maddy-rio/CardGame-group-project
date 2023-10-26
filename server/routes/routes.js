@@ -63,6 +63,8 @@ router.get('/game', requireAuth, async (req, res) => {
   }
   res.render('game', { user: req.oidc.user })
 })
+
+// test route for game without the authentication
 router.get('/game1', async (req, res) => {
   try {
     const cards = await db.getCards()
