@@ -25,4 +25,19 @@ router.get('/answers', async (req, res) => {
   }
 })
 
+
+/**
+ * 
+ * MURRAY login page for display name --FORM
+ */
+router.get('/login', async (req, res) => {
+  res.render('login')
+})
+
+router.post('/login', async (req, res) => {
+  const displayName = req.body.display_name
+  console.log(displayName);
+  res.redirect('/')
+})
+
 export default router
