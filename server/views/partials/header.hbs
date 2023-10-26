@@ -1,0 +1,29 @@
+<!-- header.hbs -->
+<header>
+  <div class='header-content'>
+    <h1>Game Platform</h1>
+    <!-- You can replace this with your platform name or logo -->
+
+    <div class='header-buttons'>
+      {{#if user}}
+        <button onclick="location.href='/logout';">Login Out</button>
+
+      {{else}}
+
+        <button onclick="location.href='/login';">Login</button>
+      {{/if}}
+      <button onclick="location.href='/joinGame';">Join Game</button>
+      <button onclick="location.href='/gameRoomPage';">Create Game Room</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Basic styling for the header */ header { background-color: #333; color:
+  #fff; padding: 10px 20px; display: flex; justify-content: space-between;
+  align-items: center; } .header-content h1 { margin: 0; } .header-buttons
+  button { margin-left: 10px; padding: 5px 15px; background-color: #007BFF;
+  color: #fff; border: none; border-radius: 5px; cursor: pointer; transition:
+  background-color 0.3s ease; } .header-buttons button:hover { background-color:
+  #0056b3; }
+</style>
