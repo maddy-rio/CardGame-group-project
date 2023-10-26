@@ -8,3 +8,7 @@ export const connection = knex(config)
 export async function getCards() {
   return connection('start-card').select()
 }
+
+export async function getAnswers() {
+  return connection('answers').select()
+}
