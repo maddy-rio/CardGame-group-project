@@ -28,7 +28,7 @@ router.use(
 //Main route
 router.get('/', async (req, res) => {
   try {
-    res.render('index')
+    res.render('index', { user: req.oidc.user })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
@@ -44,6 +44,7 @@ router.get('/answers', async (req, res) => {
   }
 })
 
+// Game route
 router.get('/game', requireAuth, async (req, res) => {
   try {
     const cards = await db.getCards()
@@ -64,7 +65,7 @@ router.get('/game', requireAuth, async (req, res) => {
   res.render('game', { user: req.oidc.user })
 })
 
-
+//Create Game routes
 router.get('/createGame', requireAuth, (req, res) => {
   res.render('createGameRoom', { user: req.oidc.user })
 })
@@ -85,6 +86,7 @@ router.post('/createGame', requireAuth, async (req, res) => {
   res.render('joinGame', { user: req.oidc.user, userDisplayName, gameRoomData })
 })
 
+//Join game routes
 router.get('/joinGame', requireAuth, (req, res) => {
   res.render('joinGame', { user: req.oidc.user })
 })
@@ -104,6 +106,7 @@ router.post('/joinGame', requireAuth, async (req, res) => {
   }
 })
 
+//Login and logout
 router.get('/login', (req, res) => {
   res.oidc.login({ returnTo: '/home' })
 })
