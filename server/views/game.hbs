@@ -1,25 +1,59 @@
-{{!-- ACCEPT ARRAY OF OBJECTS EACH OBJECT REQ: XX --}}
-{{!-- 
+{{! ACCEPT ARRAY OF OBJECTS EACH OBJECT REQ: XX }}
 
 user_id: user_session_key__
 
-hands: [
-  hand1:{card1, card2, card3, card4},
-  hand2, 
-  hand3,
-  hand4
-  ]
-
-cardInPlay: [leaderCard]
-
-
-
- --}}
- 
 <h1>Welcome to the game</h1>
 
-{{>card cardInPlay}}
+<div class='hand'>
+  <div class='hand__header'>
+    <span>
 
-{{#each hands}}
-  {{>hand}}
-{{/each}}
+    <h4 class='hand__header'>Murrays Hand</h4>
+    </span>
+    <span>
+      <h1>0 1</h1>
+    </span>
+  </div>
+  <div class='hand__cards'>
+    <div class='card'>
+      <div class='card__text'>
+        <p>Before I got my job, I had to endure a grueling interview process,
+          which included answering questions about ____________.</p>
+        <div class='card__emblem'>
+          <div class='blk_box'></div>
+          <span>SQLightmare</span>
+        </div>
+      </div>
+    </div>
+    <div class='card card-special'>
+      <div class='card__text'>
+        <p>Before I got my job, I had to endure a grueling interview process,
+          which included answering questions about ____________.</p>
+        <div class='card__emblem'>
+          <div class='blk_box'></div>
+          <span>SQLightmare</span>
+        </div>
+      </div>
+    </div>
+    <div class='card'>
+      <div class='card__text'>
+        <p>Before I got my job, I had to endure a grueling interview process,
+          which included answeri</p>
+        <div class='card__emblem'>
+          <div class='blk_box'></div>
+          <span>SQLightmare</span>
+        </div>
+      </div>
+    </div>
+    <div class='card'>
+      <div class='card__text'>
+        <p>Before I got my job, I had to endure a grueling interview process,
+          which included answering questions about ____________.</p>
+        <div class='card__emblem'>
+          <div class='blk_box'></div>
+          <span>SQLightmare</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

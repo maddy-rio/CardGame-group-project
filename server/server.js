@@ -10,12 +10,14 @@ const server = express()
 
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
+const publicFolder = Path.resolve('public')
 
 // Middleware
 server.engine('hbs', handlebars.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
 server.set('views', Path.join(__dirname, 'views'))
 server.use(express.urlencoded({ extended: true }))
+server.use(express.static(publicFolder))
 
 // Routes
 server.use('/', userRoutes)
