@@ -39,7 +39,14 @@ export async function joinGame(user, roomName, password, userDisplayName) {
       .select('id')
       .where('name', roomName)
       .andWhere('password', password)
-    return addPlayerToGameRoom(user, userDisplayName, gameRoomId[0].id)
+    const status = await addPlayerToGameRoom(
+      user,
+      userDisplayName,
+      gameRoomId[0].id
+    )
+    if (status) {
+      return roomName
+    }
   } catch (err) {
     return null
   }

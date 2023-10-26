@@ -1,0 +1,16 @@
+<div>
+  {{#if gameLobby}}
+    <p> you are in {{gameLobby}} lobby</p>
+  {{else}}
+    <p> you are not in a lobby</p>
+  {{/if}}
+
+  {{#if players}}
+    <h3>Players</h3>
+    <ul>
+      {{#each players}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>

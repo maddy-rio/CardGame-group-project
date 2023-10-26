@@ -14,9 +14,10 @@ const requireAuth = (req, res, next) => {
     next()
   }
 }
+
 router.use(
   auth({
-    authRequired: process.env.AUTH_REQUIRED === 'true',
+    authRequired: false,
     auth0Logout: process.env.AUTH0_LOGOUT === 'true',
     issuerBaseURL: process.env.ISSUER_BASE_URL,
     baseURL: process.env.BASE_URL,
@@ -28,7 +29,9 @@ router.use(
 //Main route
 router.get('/', async (req, res) => {
   try {
-    res.render('index', { user: req.oidc.user })
+    const user = req.session.user
+    console.log(user)
+    res.render('index', { user: user })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
@@ -45,24 +48,24 @@ router.get('/answers', async (req, res) => {
 })
 
 // Game route
-router.get('/game', requireAuth, async (req, res) => {
+router.get('/game', async (req, res) => {
   try {
     const cards = await db.getCards()
-    console.log(cards)
     const card = {
       id: 100,
       phrase: 'hello world',
     }
+    // console.log(req.session.gameLobbyName)
     res.render('game', {
       cards,
       card,
+      // gameLobby: gameLobbyName,
+      players: ['Toby', 'Sam'],
       user: req.oidc.user,
-      isAuthenticated: req.oidc.isAuthenticated(),
     })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
-  res.render('game', { user: req.oidc.user })
 })
 
 //Create Game routes
@@ -83,36 +86,67 @@ router.post('/createGame', requireAuth, async (req, res) => {
   }
   await db.createGameRoom(user, userDisplayName, gameRoomData)
 
-  res.render('joinGame', { user: req.oidc.user, userDisplayName, gameRoomData })
+  req.flash('success', 'Game created successfully')
+  req.flash('gameRoomData', gameRoomData)
+  req.flash('userDisplayName', userDisplayName)
+  res.redirect('joinGame')
 })
 
 //Join game routes
-router.get('/joinGame', requireAuth, (req, res) => {
-  res.render('joinGame', { user: req.oidc.user })
+router.get('/joinGame', (req, res) => {
+  const user = req.session.user
+  const gameRoomData = req.flash('gameRoomData')[0]
+  const userDisplayName = req.flash('userDisplayName')[0]
+
+  console.log(user)
+  console.log(gameRoomData)
+
+  res.render('joinGame', {
+    user: user,
+    gameRoomData: gameRoomData,
+    userDisplayName: userDisplayName,
+  })
 })
 
 router.post('/joinGame', requireAuth, async (req, res) => {
-  const { roomName, password, personalDisplayName } = req.body
-  const user = req.oidc.user
-  const userDisplayName = personalDisplayName
-  const status = await db.joinGame(user, roomName, password, userDisplayName)
-  if (status) {
-    res.render('game', { user: req.oidc.user })
-  } else {
-    res.render('joinGame', {
-      errorMessage: "Couldn't connect to game",
-      user: req.oidc.user,
-    })
+  try {
+    const { roomName, password, personalDisplayName } = req.body
+    const user = req.oidc.user
+    const userDisplayName = personalDisplayName
+    const gameLobbyName = await db.joinGame(
+      user,
+      roomName,
+      password,
+      userDisplayName
+    )
+
+    if (gameLobbyName) {
+      res.redirect('/game')
+    } else {
+      res.redirect('/joinGame', {
+        errorMessage: 'Incorrect room name or password',
+      })
+    }
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
-//Login and logout
-router.get('/login', (req, res) => {
-  res.oidc.login({ returnTo: '/home' })
+// // Initiate OIDC login
+
+router.get('/loginfix', (req, res) => {
+  res.oidc.login({ returnTo: '/login-callback' })
 })
 
-router.get('/logout', (req, res) => {
-  res.oidc.logout({ returnTo: '/home' })
+// // Handle OIDC callback after successful login
+router.get('/login-callback', (req, res) => {
+  const user = req.oidc.user
+  req.session.user = user
+  res.redirect('/')
+})
+
+router.get('/logoutFix', (req, res) => {
+  res.oidc.logout({ returnTo: '/' })
 })
 
 export default router

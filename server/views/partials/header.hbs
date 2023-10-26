@@ -1,14 +1,14 @@
 <header class='header'>
   <div class='header__text'>
-    <a class="aTagTitle" href='/'><h1>Cards against @SQLightMare </h1></a>
+    <a class='aTagTitle' href='/'><h1>Cards against @SQLightMare </h1></a>
   </div>
   <div class='header__links'>
 
     <div class='header-buttons'>
       {{#if user}}
-        <button onclick="location.href='/logout';">Login Out</button>
+        <button onclick="location.href='/logoutFix';">Login Out</button>
       {{else}}
-        <button onclick="location.href='/login';">Login</button>
+        <button onclick="location.href='/loginFix';">Login</button>
       {{/if}}
       <button onclick="location.href='/joinGame';">Join Game</button>
       <button onclick="location.href='/createGame';">Create Game</button>
