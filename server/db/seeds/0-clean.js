@@ -1,3 +1,4 @@
 export async function seed(knex) {
-  await knex('users').del()
+  await knex('start-card').del()
+  await knex('answers').del()
 }

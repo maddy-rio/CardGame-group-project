@@ -5,12 +5,17 @@ const environment = process.env.NODE_ENV || 'development'
 const config = knexfile[environment]
 export const connection = knex(config)
 
-export async function getUsers() {
-  return connection('users').select()
+export async function getCards() {
+  const numberOfEntries = 3
+  const randomEntries = await connection('start-card')
+    .select()
+    .orderByRaw('RANDOM()')
+    .limit(numberOfEntries)
+  return randomEntries
 }
 
-export async function getUser(id) {
-  return connection('users').where('id', id).first()
+export async function getAnswers() {
+  return connection('answers').select()
 }
 
 export async function createGameRoom(data) {

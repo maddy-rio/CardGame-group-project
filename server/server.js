@@ -9,10 +9,13 @@ import { auth } from 'express-openid-connect'
 import express from 'express'
 import handlebars from 'express-handlebars'
 
+import userRoutes from './routes/routes.js'
+
 const server = express()
 
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
+const publicFolder = Path.resolve('public')
 
 // Middleware
 server.engine(
