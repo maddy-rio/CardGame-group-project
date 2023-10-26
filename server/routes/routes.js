@@ -29,13 +29,14 @@ router.use(
 router.get('/', async (req, res) => {
   try {
     const cards = await db.getCards()
-    console.log(cards);
+    console.log(cards)
     const card = {
       id: 100,
       phrase: 'hello world',
     }
     res.render('game', {
-      cards, card,
+      cards,
+      card,
       user: req.oidc.user,
       isAuthenticated: req.oidc.isAuthenticated(),
     })
@@ -54,27 +55,7 @@ router.get('/answers', async (req, res) => {
   }
 })
 
-
-/**
- * 
- * MURRAY login page for display name --FORM
- */
-router.get('/login', async (req, res) => {
-  res.render('login')
-})
-
-router.post('/login', async (req, res) => {
-  const displayName = req.body.display_name
-  // add authentication here?
-  res.redirect('/')
-})
-
 router.get('/game', requireAuth, (req, res) => {
-  // const gameRoomData = {
-  //   name: req.query.name,
-  //   password: req.query.password,
-  //   rounds: req.query.rounds,
-  // }
   res.render('game', { user: req.oidc.user })
 })
 
@@ -84,21 +65,22 @@ router.get('/createGame', requireAuth, (req, res) => {
 
 router.post('/createGame', requireAuth, async (req, res) => {
   const user = req.oidc.user
-  console.log(req.body)
+  const userDisplayName = req.body.personalDisplayName
   const gameRoomData = {
     createdBy: user.sub,
     name: req.body.roomName,
     password: req.body.roomPassword,
+    currentRound: 0,
     totalRounds: Number(req.body.totalRounds),
     numberOfPlayers: Number(req.body.numberOfPlayers),
   }
-  console.log(gameRoomData)
-  await db.createGameRoom(gameRoomData)
-  res.render('game', { user: user, gameRoomData: gameRoomData })
+  await db.createGameRoom(user, userDisplayName, gameRoomData)
+
+  res.render('joinRoom', { user: req.oidc.user, userDisplayName, gameRoomData })
 })
 
 router.get('/joinRoom', requireAuth, (req, res) => {
-  res.render('protected')
+  res.render('joinRoom', { user: req.oidc.user })
 })
 
 router.get('/login', (req, res) => {

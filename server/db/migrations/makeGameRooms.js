@@ -14,10 +14,12 @@ export async function up(knex) {
   // Creating players table
   await knex.schema.createTable('players', (table) => {
     table.increments('id').primary()
-    table.string('unqiueId')
-    table.integer('gameRoomId').unsigned().references('id').inTable('gameRooms')
+    table.string('userId')
+    table.integer('gameRoomId')
     table.string('username')
-    table.boolean('playerDoneMove').defaultTo(false)
+    table.boolean('pickedCard').defaultTo(false)
+    table.integer('startCard').unsigned().references('id').inTable('start-card')
+    table.integer('awswer').unsigned().references('id').inTable('answers')
   })
 }
 

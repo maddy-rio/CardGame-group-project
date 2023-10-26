@@ -3,6 +3,9 @@ import * as URL from 'node:url'
 
 import express from 'express'
 import handlebars from 'express-handlebars'
+// import session from 'express-session' // Adjusted the import
+
+// import crypto from 'crypto' // Adjusted the import
 
 import userRoutes from './routes/routes.js'
 
@@ -25,6 +28,19 @@ server.set('view engine', 'hbs')
 server.set('views', Path.join(__dirname, 'views'))
 server.use(express.urlencoded({ extended: true }))
 server.use(express.static(publicFolder))
+
+// const generateSecret = (length = 32) => {
+//   return crypto.randomBytes(length).toString('hex')
+// }
+
+// const secret = generateSecret()
+// server.use(
+//   session({
+//     secret: secret,
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// )
 
 // Routes
 server.use('/', userRoutes)

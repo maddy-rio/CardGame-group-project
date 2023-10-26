@@ -1,0 +1,49 @@
+<body>
+  <div>
+    {{#if user}}
+      <div id='gameRoomForm'>
+        <form action='/createGame' method='post'>
+          <label for='roomName'>Room Name:</label>
+          {{#if gameRoomData}}
+            <input
+              type='text'
+              id='roomName'
+              name='roomName'
+              value='{{gameRoomData.name}}'
+              required
+            /><br /><br />
+          {{else}}
+            <input type='text' id='roomName' name='roomName' required /><br
+            /><br />
+          {{/if}}
+          <label for='roomPassword'>Password:</label>
+          <input type='password' id='roomPassword' name='roomPassword' /><br
+          /><br />
+
+          <label for='personalDisplayName'>Your game display name</label>
+          {{#if userDisplayName}}
+            <input
+              type='text'
+              id='personalDisplayName'
+              name='personalDisplayName'
+              value='{{userDisplayName}}'
+              required
+            /><br /><br />
+          {{else}}
+            <input
+              type='text'
+              id='personalDisplayName'
+              name='personalDisplayName'
+            /><br /><br />
+          {{/if}}
+
+          <input type='submit' value='Join game' />
+        </form>
+      </div>
+    {{else}}
+      You are not logged in.
+      <a href='/login'>Login</a>
+    {{/if}}
+  </div>
+
+</body>

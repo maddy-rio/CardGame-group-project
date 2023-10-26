@@ -1,21 +1,33 @@
 <body>
   <div>
     {{#if user}}
-      <!-- Pop-down form -->
       <div id='gameRoomForm'>
-        <form action='/createGame' method='post'>
-          <label for='roomName'>Room Name:</label>
-          <input type='text' id='roomName' name='roomName' required /><br /><br
-          />
-          <label for='roomPassword'>Password:</label>
-          <input type='password' id='roomPassword' name='roomPassword' /><br
-          /><br />
-          <label for='totalRounds'>Rounds:</label>
-          <input type='number' id='totalRounds' name='totalRounds' /><br /><br
-          />
-          <label for='numberOfPlayers'>Number Of Players:</label>
-          <input type='number' id='numberOfPlayers' name='numberOfPlayers' /><br
-          /><br />
+        <form class='formGrid' action='/createGame' method='post'>
+          <div>
+            <label for='roomName'>Room Name:</label>
+            <input type='text' id='roomName' name='roomName' required /><br
+            /><br />
+            <label for='roomPassword'>Password:</label>
+            <input type='password' id='roomPassword' name='roomPassword' /><br
+            /><br />
+            <label for='totalRounds'>Rounds:</label>
+            <input type='number' id='totalRounds' name='totalRounds' /><br /><br
+            />
+            <label for='numberOfPlayers'>Number Of Players:</label>
+            <input
+              type='number'
+              id='numberOfPlayers'
+              name='numberOfPlayers'
+            /><br /><br />
+          </div>
+          <div>
+            <label for='personalDisplayName'>Your game display name</label>
+            <input
+              type='text'
+              id='personalDisplayName'
+              name='personalDisplayName'
+            /><br /><br />
+          </div>
           <input type='submit' value='Create' />
         </form>
       </div>

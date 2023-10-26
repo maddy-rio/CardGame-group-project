@@ -18,17 +18,21 @@ export async function getAnswers() {
   return connection('answers').select()
 }
 
-export async function createGameRoom(data) {
-  console.log(data)
-  return connection('gameRooms').insert(data)
+export async function createGameRoom(user, userDisplayName, gameRoomData) {
+  const gameRoomId = await connection('gameRooms').insert(gameRoomData)
+  // const gameRoom = await connection('gameRooms')
+  //   .select()
+  //   .where('id', gameRoomId[0])
+  addPlayerToGameRoom(user, userDisplayName, gameRoomId[0])
+  return
 }
 
-export async function addPlayerToGameRoom(user, gameRoomId) {
+export async function addPlayerToGameRoom(user, userDisplayName, gameRoomId) {
+  console.log(userDisplayName)
   const data = {
-    unqiueId: user.sub,
+    userId: user.sub,
     gameRoomId: gameRoomId,
-    username: user.name,
-    playerDoneMove: false,
+    username: userDisplayName,
   }
-  return connection('player').insert(data)
+  return connection('players').insert(data)
 }
