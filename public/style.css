@@ -14,6 +14,7 @@ body {
   background-blend-mode: color-dodge;
   background-color: rgba(195, 195, 195, 0.268);
   position: relative;
+  overflow:hidden;
 }
 
 .card {
@@ -32,6 +33,7 @@ body {
 
 .card-opponent {
   transform: scale(0.5);
+  rotate: 90deg;
 }
 
 .card:hover {
@@ -46,7 +48,10 @@ body {
 }
 
 .card-disabled {
-  transform: scale(0.5) !important; 
+  height: 10rem;
+  width: 7.5rem;
+  background-color: rgba(255, 255, 255, 0.28);
+  transform: none !important; 
   cursor: default !important;
   border: none !important;
   transition-duration: 0ms !important;
@@ -55,6 +60,12 @@ body {
 .card-special {
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+.card-special:hover {
+  transform: none;
+  border:none;
+  /* color: white; */
 }
 
 .card-special .blk_box {
@@ -71,6 +82,7 @@ body {
 .card__emblem {
   display: inline-block;
   font-family: 'Dancing Script', cursive;
+  font-family: 'Satisfy', cursive;
 }
 
 .blk_box {
@@ -80,10 +92,17 @@ body {
   display: inline-block;
 }
 
+.grid-top-retract {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  transform: translateY(-150px);
+}
+
 .hand {
   max-width: 150rem;
   margin: 0 auto;
-  margin-bottom:4rem;
+  margin-bottom:1rem;
 }
 
 .hand__header {
@@ -91,6 +110,7 @@ body {
   justify-content: space-between;
   font-size: 50px;
   width: 100%;
+  font-family: 'Lexend', sans-serif;
 }
 
 .hand__user {
