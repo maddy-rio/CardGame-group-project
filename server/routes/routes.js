@@ -37,8 +37,10 @@ router.get('/', async (req, res) => {
 //Answers route
 router.get('/answers', async (req, res) => {
   try {
+    const cards = await db.getCards()
+    // res.render('index', { cards })
     const answers = await db.getAnswers()
-    res.render('test', { answers })
+    res.render('index', { cards, answers })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
