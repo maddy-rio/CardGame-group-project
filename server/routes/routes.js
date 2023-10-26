@@ -37,4 +37,18 @@ router.get('/murrays-test-endpoint', async (req, res) => {
   }
 })
 
+router.get('/murrays-test-endpoint2', async (req, res) => {
+  try {  
+    const data = {
+      cardInPlay: {
+        card_answer: 'test'
+      },
+    }
+    res.render('grid')
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  }
+})
+
+
 export default router

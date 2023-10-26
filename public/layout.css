@@ -1,0 +1,45 @@
+/* 
+font-family: 'Dancing Script', cursive;
+font-family: 'Satisfy', cursive; 
+*/
+
+.grid-test {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+  height: 100vh;
+}
+
+.grid-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+  /* background-color: red; */
+}
+
+.grid-right {
+  grid-column: 10 / 11;
+  grid-row: 1 / 5;
+  /* background-color: rgb(0, 192, 235); */
+}
+
+.grid-top {
+  grid-column: 2 / 10;
+  grid-row: 1 / 2;
+  background-color: rgba(2, 36, 0, 0.55);
+  /* display: inline; */
+  /* justify-content: space-evenly; */
+}
+
+.grid-center {
+  grid-column: 2 / 10;
+  grid-row: 2 / 4;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
+  justify-content: center;
+}
+
+.grid-bottom {
+  grid-column: 2 / 10;
+  grid-row: 4 / 6;
+  /* background-color: rgb(0, 0, 0); */
+}

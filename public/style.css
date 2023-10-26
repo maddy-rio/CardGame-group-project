@@ -13,6 +13,7 @@ body {
   background-image: url(https://plus.unsplash.com/premium_photo-1675798692122-6705bd8a3c7b?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-blend-mode: color-dodge;
   background-color: rgba(195, 195, 195, 0.268);
+  position: relative;
 }
 
 .card {
@@ -20,13 +21,17 @@ body {
   background-color: rgb(252, 252, 252);
   font-weight: 800;
   font-size: larger;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 2rem;
   height: 20rem;
   width: 15rem;
   font-family: 'Courier New', Courier, monospace;
   box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.468);
   margin: 1rem;
+}
+
+.card-opponent {
+  transform: scale(0.5);
 }
 
 .card:hover {
@@ -40,8 +45,12 @@ body {
   transform: translateY(-50px);
 }
 
-
-
+.card-disabled {
+  transform: scale(0.5) !important; 
+  cursor: default !important;
+  border: none !important;
+  transition-duration: 0ms !important;
+}
 
 .card-special {
   background-color: rgb(0, 0, 0);
@@ -59,8 +68,9 @@ body {
   justify-content: space-between;
 }
 
-.card_emblem {
+.card__emblem {
   display: inline-block;
+  font-family: 'Dancing Script', cursive;
 }
 
 .blk_box {
