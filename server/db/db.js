@@ -19,12 +19,8 @@ export async function getAnswers() {
 }
 
 export async function createGameRoom(user, userDisplayName, gameRoomData) {
-  const gameRoomId = await connection('gameRooms').insert(gameRoomData)
-  // const gameRoom = await connection('gameRooms')
-  //   .select()
-  //   .where('id', gameRoomId[0])
-  addPlayerToGameRoom(user, userDisplayName, gameRoomId[0])
-  return
+  return await connection('gameRooms').insert(gameRoomData)
+  // return addPlayerToGameRoom(user, userDisplayName, gameRoomId[0])
 }
 
 export async function addPlayerToGameRoom(user, userDisplayName, gameRoomId) {
@@ -35,4 +31,16 @@ export async function addPlayerToGameRoom(user, userDisplayName, gameRoomId) {
     username: userDisplayName,
   }
   return connection('players').insert(data)
+}
+
+export async function joinGame(user, roomName, password, userDisplayName) {
+  try {
+    const gameRoomId = await connection('gameRooms')
+      .select('id')
+      .where('name', roomName)
+      .andWhere('password', password)
+    return addPlayerToGameRoom(user, userDisplayName, gameRoomId[0].id)
+  } catch (err) {
+    return null
+  }
 }

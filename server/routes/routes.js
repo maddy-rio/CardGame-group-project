@@ -88,6 +88,21 @@ router.get('/joinGame', requireAuth, (req, res) => {
   res.render('joinGame', { user: req.oidc.user })
 })
 
+router.post('/joinGame', requireAuth, async (req, res) => {
+  const { roomName, password, personalDisplayName } = req.body
+  const user = req.oidc.user
+  const userDisplayName = personalDisplayName
+  const status = await db.joinGame(user, roomName, password, userDisplayName)
+  if (status) {
+    res.render('game', { user: req.oidc.user })
+  } else {
+    res.render('joinGame', {
+      errorMessage: "Couldn't connect to game",
+      user: req.oidc.user,
+    })
+  }
+})
+
 router.get('/login', (req, res) => {
   res.oidc.login({ returnTo: '/home' })
 })

@@ -1,8 +1,12 @@
 <body>
   <div>
+    {{#if errorMessage}}
+      <p class='errorMessage'>{{errorMessage}}</p>
+    {{/if}}
+
     {{#if user}}
-      <div class="joinGameForm">
-        <form action='/createGame' method='post'>
+      <div class='joinGameForm'>
+        <form action='/joinGame' method='post'>
           <label for='roomName'>Room Name:</label>
           {{#if gameRoomData}}
             <input
@@ -16,9 +20,8 @@
             <input type='text' id='roomName' name='roomName' required /><br
             /><br />
           {{/if}}
-          <label for='roomPassword'>Password:</label>
-          <input type='password' id='roomPassword' name='roomPassword' /><br
-          /><br />
+          <label for='password'>Password:</label>
+          <input type='password' id='password' name='password' /><br /><br />
 
           <label for='personalDisplayName'>Your game display name</label>
           {{#if userDisplayName}}
