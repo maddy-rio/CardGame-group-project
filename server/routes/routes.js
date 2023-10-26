@@ -29,8 +29,13 @@ router.use(
 router.get('/', async (req, res) => {
   try {
     const cards = await db.getCards()
-    res.render('index', {
-      cards,
+    console.log(cards);
+    const card = {
+      id: 100,
+      phrase: 'hello world',
+    }
+    res.render('game', {
+      cards, card,
       user: req.oidc.user,
       isAuthenticated: req.oidc.isAuthenticated(),
     })
@@ -47,6 +52,21 @@ router.get('/answers', async (req, res) => {
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
+})
+
+
+/**
+ * 
+ * MURRAY login page for display name --FORM
+ */
+router.get('/login', async (req, res) => {
+  res.render('login')
+})
+
+router.post('/login', async (req, res) => {
+  const displayName = req.body.display_name
+  // add authentication here?
+  res.redirect('/')
 })
 
 router.get('/game', requireAuth, (req, res) => {
