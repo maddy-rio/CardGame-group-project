@@ -1,0 +1,25 @@
+{{!-- ACCEPT ARRAY OF OBJECTS EACH OBJECT REQ: XX --}}
+{{!-- 
+
+user_id: user_session_key__
+
+hands: [
+  hand1:{card1, card2, card3, card4},
+  hand2, 
+  hand3,
+  hand4
+  ]
+
+cardInPlay: [leaderCard]
+
+
+
+ --}}
+ 
+<h1>Welcome to the game</h1>
+
+{{>card cardInPlay}}
+
+{{#each hands}}
+  {{>hand}}
+{{/each}}
