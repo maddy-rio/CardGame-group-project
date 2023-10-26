@@ -1,0 +1,25 @@
+<div class="grid-test">
+  <div class="grid-left">
+    <div class="card card-opponent card-disabled"></div>
+    <div class="card card-opponent card-disabled"></div>
+    <div class="card card-opponent card-disabled"></div>
+  </div>
+  {{!-- <div class="grid-top">
+    <div class="grid-top-retract">
+      <div class="card card-disabled"></div>
+      <div class="card card-disabled"></div>
+      <div class="card card-disabled"></div>
+    </div>
+  </div> --}}
+  <div class="grid-center">
+      {{> specialCard card }}
+  </div>
+  <div class="grid-right">
+    <div class="card card-opponent card-disabled"></div>
+    <div class="card card-opponent card-disabled"></div>
+    <div class="card card-opponent card-disabled"></div>
+  </div>
+  <div class="grid-bottom">
+    {{> hand }}
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class='hand'>
+  <div class='hand__cards'>
+    {{#each cards}}
+        {{>card}}
+    {{/each}}
+  </div>
+  <hr>
+  <div class='hand__header'>
+    <span class="hand__user">Murrays {{user_name}} Hand</span>
+    <span class="hand__user">score: {{score}} 1</span>
+  </div>
+</div>

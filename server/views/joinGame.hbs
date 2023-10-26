@@ -1,0 +1,52 @@
+<body>
+  <div>
+    {{#if errorMessage}}
+      <p class='errorMessage'>{{errorMessage}}</p>
+    {{/if}}
+
+    {{#if user}}
+      <div class='joinGameForm'>
+        <form action='/joinGame' method='post'>
+          <label for='roomName'>Room Name:</label>
+          {{#if gameRoomData}}
+            <input
+              type='text'
+              id='roomName'
+              name='roomName'
+              value='{{gameRoomData.name}}'
+              required
+            /><br /><br />
+          {{else}}
+            <input type='text' id='roomName' name='roomName' required /><br
+            /><br />
+          {{/if}}
+          <label for='password'>Password:</label>
+          <input type='password' id='password' name='password' /><br /><br />
+
+          <label for='personalDisplayName'>Your game display name</label>
+          {{#if userDisplayName}}
+            <input
+              type='text'
+              id='personalDisplayName'
+              name='personalDisplayName'
+              value='{{userDisplayName}}'
+              required
+            /><br /><br />
+          {{else}}
+            <input
+              type='text'
+              id='personalDisplayName'
+              name='personalDisplayName'
+            /><br /><br />
+          {{/if}}
+
+          <input type='submit' value='Join game' />
+        </form>
+      </div>
+    {{else}}
+      You are not logged in.
+      <a href='/login'>Login</a>
+    {{/if}}
+  </div>
+
+</body>
