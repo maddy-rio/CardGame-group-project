@@ -2,15 +2,15 @@ export async function seed(knex) {
   await knex('answers').insert([
     {
       id: 1,
-      response: 'A rubber duck debugging session.',
+      response: 'A rubber duck debugging session',
     },
     {
       id: 2,
-      response: 'Stack Overflow at 3 AM.',
+      response: 'Stack Overflow at 3 AM',
     },
     {
       id: 3,
-      response: 'A keyboard covered in Cheeto dust.',
+      response: 'A keyboard covered in Cheeto dust',
     },
     {
       id: 4,
@@ -18,23 +18,23 @@ export async function seed(knex) {
     },
     {
       id: 5,
-      response: 'A never-ending npm install.',
+      response: 'A never-ending npm install',
     },
     {
       id: 6,
-      response: 'Infinite loops.',
+      response: 'Infinite loops',
     },
     {
       id: 7,
-      response: 'A coffee-stained mousepad.',
+      response: 'A coffee-stained mousepad',
     },
     {
       id: 8,
-      response: 'A compile error message written in Shakespearean English.',
+      response: 'A compile error message written in Shakespearean English',
     },
     {
       id: 9,
-      response: 'Spaghetti code.',
+      response: 'Spaghetti code',
     },
     {
       id: 10,
@@ -46,99 +46,99 @@ export async function seed(knex) {
     },
     {
       id: 12,
-      response: 'Recursive self-doubt.',
+      response: 'Recursive self-doubt',
     },
     {
       id: 13,
-      response: 'Refactoring for fun and profit.',
+      response: 'Refactoring for fun and profit',
     },
     {
       id: 14,
-      response: 'A keyboard with no escape key.',
+      response: 'A keyboard with no escape key',
     },
     {
       id: 15,
-      response: '"404 Not Found" errors.',
+      response: '"404 Not Found" errors',
     },
     {
       id: 16,
-      response: 'A 500-page software documentation manual.',
+      response: 'A 500-page software documentation manual',
     },
     {
       id: 17,
-      response: 'Debugging with print statements.',
+      response: 'Debugging with print statements',
     },
     {
       id: 18,
-      response: 'A rubber dome keyboard.',
+      response: 'A rubber dome keyboard',
     },
     {
       id: 19,
-      response: 'A version control conflict that turns into a heated debate.',
+      response: 'A version control conflict that turns into a heated debate',
     },
     {
       id: 20,
-      response: 'A hard drive full of cat videos.',
+      response: 'A hard drive full of cat videos',
     },
     {
       id: 21,
-      response: 'An email thread with 100 replies.',
+      response: 'An email thread with 100 replies',
     },
     {
       id: 22,
-      response: 'A missing semicolon.',
+      response: 'A missing semicolon',
     },
     {
       id: 23,
-      response: 'An over-engineered solution.',
+      response: 'An over-engineered solution',
     },
     {
       id: 24,
-      response: 'A heated argument about tabs vs. spaces.',
+      response: 'A heated argument about tabs vs. spaces',
     },
     {
       id: 25,
-      response: 'An outdated tech stack.',
+      response: 'An outdated tech stack',
     },
     {
       id: 26,
-      response: 'A codebase with no comments.',
+      response: 'A codebase with no comments',
     },
     {
       id: 27,
-      response: 'An infinite Git merge conflict.',
+      response: 'An infinite Git merge conflict',
     },
     {
       id: 28,
-      response: 'An unresponsive client.',
+      response: 'An unresponsive client',
     },
     {
       id: 29,
-      response: 'An AI that generates code comments.',
+      response: 'An AI that generates code comments',
     },
     {
       id: 30,
-      response: 'A broken continuous integration pipeline.',
+      response: 'A broken continuous integration pipeline',
     },
     {
       id: 31,
-      response: 'An outdated Internet Explorer plugin.',
+      response: 'An outdated Internet Explorer plugin',
     },
     {
       id: 32,
-      response: 'A server room without proper cooling.',
+      response: 'A server room without proper cooling',
     },
     {
       id: 33,
-      response: 'An outdated IDE with neon colors.',
+      response: 'An outdated IDE with neon colors',
     },
     {
       id: 34,
-      response: 'A code review that ends in tears.',
+      response: 'A code review that ends in tears',
     },
     {
       id: 35,
-      response: 'An intractable memory leak.',
+      response: 'An intractable memory leak',
     },
     {
       id: 36,
@@ -146,15 +146,15 @@ export async function seed(knex) {
     },
     {
       id: 37,
-      response: 'A meeting that could have been an email.',
+      response: 'A meeting that could have been an email',
     },
     {
       id: 38,
-      response: 'A "404 Not Found" costume for Halloween.',
+      response: 'A "404 Not Found" costume for Halloween',
     },
     {
       id: 39,
-      response: 'An untested edge case.',
+      response: 'An untested edge case',
     },
     {
       id: 40,
@@ -162,71 +162,71 @@ export async function seed(knex) {
     },
     {
       id: 41,
-      response: 'A software update that breaks everything.',
+      response: 'A software update that breaks everything',
     },
     {
       id: 42,
-      response: 'A project manager who speaks in buzzwords.',
+      response: 'A project manager who speaks in buzzwords',
     },
     {
       id: 43,
-      response: 'An algorithm that only works on odd-numbered Wednesdays.',
+      response: 'An algorithm that only works on odd-numbered Wednesdays',
     },
     {
       id: 44,
-      response: 'A keyboard with a sticky "Ctrl" key.',
+      response: 'A keyboard with a sticky "Ctrl" key',
     },
     {
       id: 45,
-      response: 'A program that generates random syntax errors.',
+      response: 'A program that generates random syntax errors',
     },
     {
       id: 46,
-      response: 'A conference call with no agenda.',
+      response: 'A conference call with no agenda',
     },
     {
       id: 47,
-      response: 'An AI that writes terrible code.',
+      response: 'An AI that writes terrible code',
     },
     {
       id: 48,
-      response: 'A team-building exercise involving code golf.',
+      response: 'A team-building exercise involving code golf',
     },
     {
       id: 49,
-      response: 'A coding challenge with no clear solution.',
+      response: 'A coding challenge with no clear solution',
     },
     {
       id: 50,
-      response: 'A software license written in Klingon.',
+      response: 'A software license written in Klingon',
     },
     {
       id: 51,
-      response: 'A codebase haunted by the ghost of previous developers.',
+      response: 'A codebase haunted by the ghost of previous developers',
     },
     {
       id: 52,
-      response: 'An app that only works on Internet Explorer 6.',
+      response: 'An app that only works on Internet Explorer 6',
     },
     {
       id: 53,
-      response: 'A 404-page with a typo.',
+      response: 'A 404-page with a typo',
     },
     {
       id: 54,
-      response: 'Debugging an issue caused by a single misplaced semicolon.',
+      response: 'Debugging an issue caused by a single misplaced semicolon',
     },
     {
       id: 55,
-      response: "A commit message that simply says 'oops.'",
+      response: "A commit message that simply says 'oops'",
     },
     {
       id: 56,
-      response: 'An unexpected server crash during a live demo.',
+      response: 'An unexpected server crash during a live demo',
     },
     {
       id: 57,
-      response: 'A recursive function that runs forever.',
+      response: 'A recursive function that runs forever',
     },
     {
       id: 58,
@@ -239,7 +239,7 @@ export async function seed(knex) {
     },
     {
       id: 60,
-      response: 'An intern who broke the build.',
+      response: 'An intern who broke the build',
     },
     {
       id: 61,
@@ -248,7 +248,7 @@ export async function seed(knex) {
     },
     {
       id: 62,
-      response: 'An unreadable error message in a foreign language.',
+      response: 'An unreadable error message in a foreign language',
     },
     {
       id: 63,
@@ -258,19 +258,19 @@ export async function seed(knex) {
     {
       id: 64,
       response:
-        'A web page that renders perfectly in Internet Explorer but nowhere else.',
+        'A web page that renders perfectly in Internet Explorer but nowhere else',
     },
     {
       id: 65,
-      response: 'An algorithm that becomes self-aware.',
+      response: 'An algorithm that becomes self-aware',
     },
     {
       id: 66,
-      response: 'A coding convention debate that leads to a 3-hour meeting.',
+      response: 'A coding convention debate that leads to a 3-hour meeting',
     },
     {
       id: 67,
-      response: 'A never-ending software update.',
+      response: 'A never-ending software update',
     },
     {
       id: 68,
@@ -282,19 +282,19 @@ export async function seed(knex) {
     },
     {
       id: 70,
-      response: 'A compiler error message filled with cryptic symbols.',
+      response: 'A compiler error message filled with cryptic symbols',
     },
     {
       id: 71,
-      response: 'An AI that insists on refactoring all your code.',
+      response: 'An AI that insists on refactoring all your code',
     },
     {
       id: 72,
-      response: 'A keyboard shortcut that only works on Fridays.',
+      response: 'A keyboard shortcut that only works on Fridays',
     },
     {
       id: 73,
-      response: 'A code review with more comments than code.',
+      response: 'A code review with more comments than code',
     },
     {
       id: 74,
@@ -306,29 +306,28 @@ export async function seed(knex) {
     },
     {
       id: 76,
-      response: 'A function with a name longer than the code inside it.',
+      response: 'A function with a name longer than the code inside it',
     },
     {
       id: 77,
       response:
-        'A server error that mysteriously vanishes when you try to reproduce it.',
+        'A server error that mysteriously vanishes when you try to reproduce it',
     },
     {
       id: 78,
-      response: 'A security vulnerability that no one wants to fix.',
+      response: 'A security vulnerability that no one wants to fix',
     },
     {
       id: 79,
-      response: 'An API that changes its response format every week.',
+      response: 'An API that changes its response format every week',
     },
     {
       id: 80,
-      response: 'A test suite that takes longer to run than the code it tests.',
+      response: 'A test suite that takes longer to run than the code it tests',
     },
     {
       id: 81,
-      response:
-        'A typo in production code that crashes the entire application.',
+      response: 'A typo in production code that crashes the entire application',
     },
     {
       id: 82,
@@ -344,15 +343,15 @@ export async function seed(knex) {
     },
     {
       id: 85,
-      response: 'A codebase with comments that are more like ancient scrolls.',
+      response: 'A codebase with comments that are more like ancient scrolls',
     },
     {
       id: 86,
-      response: 'A password policy that requires 20 characters and an emoji.',
+      response: 'A password policy that requires 20 characters and an emoji',
     },
     {
       id: 87,
-      response: 'An error message that only appears on Fridays at 4:59 PM.',
+      response: 'An error message that only appears on Fridays at 4:59 PM',
     },
     {
       id: 88,
@@ -361,12 +360,12 @@ export async function seed(knex) {
     {
       id: 89,
       response:
-        'A browser compatibility issue that only happens in obscure browsers.',
+        'A browser compatibility issue that only happens in obscure browsers',
     },
     {
       id: 90,
       response:
-        'An email from a user who discovered a bug you thought no one would find.',
+        'An email from a user who discovered a bug you thought no one would find',
     },
     {
       id: 91,
@@ -378,28 +377,28 @@ export async function seed(knex) {
     },
     {
       id: 93,
-      response: 'An infinite recursion that leads to a server meltdown.',
+      response: 'An infinite recursion that leads to a server meltdown',
     },
     {
       id: 94,
-      response: 'A syntax error caused by a single misplaced quote.',
+      response: 'A syntax error caused by a single misplaced quote',
     },
     {
       id: 95,
-      response: "A commit message that simply says 'fixes stuff.'",
+      response: "A commit message that simply says 'fixes stuff'",
     },
     {
       id: 96,
-      response: "A bug report that consists of one word: 'help.'",
+      response: "A bug report that consists of one word: 'help'",
     },
     {
       id: 97,
       response:
-        'A version control system that insists on renaming all your files.',
+        'A version control system that insists on renaming all your files',
     },
     {
       id: 98,
-      response: 'A merge conflict that feels like a declaration of war.',
+      response: 'A merge conflict that feels like a declaration of war',
     },
     {
       id: 99,
