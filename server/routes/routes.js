@@ -28,18 +28,7 @@ router.use(
 //Main route
 router.get('/', async (req, res) => {
   try {
-    const cards = await db.getCards()
-    console.log(cards)
-    const card = {
-      id: 100,
-      phrase: 'hello world',
-    }
-    res.render('game', {
-      cards,
-      card,
-      user: req.oidc.user,
-      isAuthenticated: req.oidc.isAuthenticated(),
-    })
+    res.render('index')
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
@@ -55,7 +44,23 @@ router.get('/answers', async (req, res) => {
   }
 })
 
-router.get('/game', requireAuth, (req, res) => {
+router.get('/game', requireAuth, async (req, res) => {
+  try {
+    const cards = await db.getCards()
+    console.log(cards)
+    const card = {
+      id: 100,
+      phrase: 'hello world',
+    }
+    res.render('game', {
+      cards,
+      card,
+      user: req.oidc.user,
+      isAuthenticated: req.oidc.isAuthenticated(),
+    })
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  }
   res.render('game', { user: req.oidc.user })
 })
 

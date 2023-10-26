@@ -1,17 +1,9 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 35rem; 
-  min-width: 20rem; 
+  max-width: 35rem;
+  min-width: 20rem;
   margin: 0 auto;
 }
 
@@ -23,7 +15,6 @@
   font-size: 20px;
   border-radius: 7px;
   border: none;
-  
 }
 
 .login-form__submit {
