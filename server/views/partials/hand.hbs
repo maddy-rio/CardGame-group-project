@@ -1,0 +1,9 @@
+{{!-- EACH USERS HAND | SOME WILL BE HIDDEN --}}
+
+<div class="hand">
+  <h4>{{user_name}} hand</h4>
+
+  {{#each card}}
+    <a href="/endpoint/{{user_id}}">{{>card}}</a>
+  {{/each }}
+</div>
