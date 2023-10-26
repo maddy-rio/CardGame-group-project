@@ -27,7 +27,6 @@ router.get('/answers', async (req, res) => {
 router.get('/murrays-test-endpoint', async (req, res) => {
   try {  
     const data = {
-      // user_id: 'test',
       cardInPlay: {
         card_answer: 'test'
       },

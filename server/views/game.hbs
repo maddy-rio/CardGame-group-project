@@ -1,18 +1,11 @@
 {{! ACCEPT ARRAY OF OBJECTS EACH OBJECT REQ: XX }}
 
-user_id: user_session_key__
-
-<h1>Welcome to the game</h1>
+{{!-- <h1>Welcome to the game</h1> --}}
 
 <div class='hand'>
   <div class='hand__header'>
-    <span>
-
-    <h4 class='hand__header'>Murrays Hand</h4>
-    </span>
-    <span>
-      <h1>0 1</h1>
-    </span>
+    <span class="hand__user">Murrays {{user_name}} Hand</span>
+    <span class="hand__user">score: {{score}} 1</span>
   </div>
   <div class='hand__cards'>
     <div class='card'>
