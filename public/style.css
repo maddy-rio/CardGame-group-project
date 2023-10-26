@@ -102,7 +102,7 @@ body {
 .hand {
   max-width: 150rem;
   margin: 0 auto;
-  margin-bottom:1rem;
+  /* margin-bottom:0rem; */
 }
 
 .hand__header {

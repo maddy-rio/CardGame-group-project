@@ -25,23 +25,53 @@ router.get('/answers', async (req, res) => {
 })
 
 router.get('/murrays-test-endpoint', async (req, res) => {
-  try {  
-    const data = {
-      cardInPlay: {
-        card_answer: 'test'
+  try {
+    // const data = {
+    //   cardInPlay: {
+    //     card_answer: 'test'
+    //   },
+    // }
+    const card = [
+      {
+        description: 'test',
+        id: 'id',
       },
-    }
-    res.render('game')
+      {
+        description: 'test',
+        id: 'id',
+      },
+      {
+        description: 'test',
+        id: 'id',
+      },
+      {
+        description: 'test',
+        id: 'id',
+      },
+      {
+        description: 'test',
+        id: 'id',
+      },
+      {
+        description: 'test',
+        id: 'id',
+      },
+      {
+        description: 'test',
+        id: 'id',
+      },
+    ]
+    res.render('game', {card})
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
 
 router.get('/murrays-test-endpoint2', async (req, res) => {
-  try {  
+  try {
     const data = {
       cardInPlay: {
-        card_answer: 'test'
+        card_answer: 'test',
       },
     }
     res.render('grid')
@@ -49,6 +79,5 @@ router.get('/murrays-test-endpoint2', async (req, res) => {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
 })
-
 
 export default router
