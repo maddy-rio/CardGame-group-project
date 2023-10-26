@@ -17,3 +17,22 @@ export async function getCards() {
 export async function getAnswers() {
   return connection('answers').select()
 }
+
+export async function createGameRoom(user, userDisplayName, gameRoomData) {
+  const gameRoomId = await connection('gameRooms').insert(gameRoomData)
+  // const gameRoom = await connection('gameRooms')
+  //   .select()
+  //   .where('id', gameRoomId[0])
+  addPlayerToGameRoom(user, userDisplayName, gameRoomId[0])
+  return
+}
+
+export async function addPlayerToGameRoom(user, userDisplayName, gameRoomId) {
+  console.log(userDisplayName)
+  const data = {
+    userId: user.sub,
+    gameRoomId: gameRoomId,
+    username: userDisplayName,
+  }
+  return connection('players').insert(data)
+}
