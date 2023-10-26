@@ -64,26 +64,6 @@ router.get('/game', requireAuth, async (req, res) => {
   res.render('game', { user: req.oidc.user })
 })
 
-// test route for game without the authentication
-router.get('/game1', async (req, res) => {
-  try {
-    const cards = await db.getCards()
-    console.log(cards)
-    const card = {
-      id: 100,
-      phrase: 'hello world',
-    }
-    res.render('game', {
-      cards,
-      card,
-      user: req.oidc.user,
-      isAuthenticated: req.oidc.isAuthenticated(),
-    })
-  } catch (err) {
-    res.status(500).send('DATABASE ERROR: ' + err.message)
-  }
-  res.render('game', { user: req.oidc.user })
-})
 
 router.get('/createGame', requireAuth, (req, res) => {
   res.render('createGameRoom', { user: req.oidc.user })
@@ -130,6 +110,31 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
   res.oidc.logout({ returnTo: '/home' })
+})
+
+
+/**
+ * 
+ * test route for game without the authentication
+ */
+router.get('/game1', async (req, res) => {
+  try {
+    const cards = await db.getCards()
+    console.log(cards)
+    const card = {
+      id: 100,
+      phrase: 'hello world',
+    }
+    res.render('game', {
+      cards,
+      card,
+      user: req.oidc.user,
+      isAuthenticated: req.oidc.isAuthenticated(),
+    })
+  } catch (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  }
+  res.render('game', { user: req.oidc.user })
 })
 
 export default router
