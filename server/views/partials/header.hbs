@@ -1,6 +1,6 @@
 <header class='header'>
   <div class='header__text'>
-    <h1>Cards against @SQLightMare </h1>
+    <a class="aTagTitle" href='/'><h1>Cards against @SQLightMare </h1></a>
   </div>
   <div class='header__links'>
 
@@ -10,8 +10,7 @@
       {{else}}
         <button onclick="location.href='/login';">Login</button>
       {{/if}}
-      <button onclick="location.href='/joinRoom';">Join Room</button>
-      <button onclick="location.href='/game';">Play Game</button>
+      <button onclick="location.href='/joinGame';">Join Game</button>
       <button onclick="location.href='/createGame';">Create Game</button>
       {{#if user}}
         <p>Welcome {{user.name}} !</p>

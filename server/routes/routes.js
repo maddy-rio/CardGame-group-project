@@ -76,11 +76,11 @@ router.post('/createGame', requireAuth, async (req, res) => {
   }
   await db.createGameRoom(user, userDisplayName, gameRoomData)
 
-  res.render('joinRoom', { user: req.oidc.user, userDisplayName, gameRoomData })
+  res.render('joinGame', { user: req.oidc.user, userDisplayName, gameRoomData })
 })
 
-router.get('/joinRoom', requireAuth, (req, res) => {
-  res.render('joinRoom', { user: req.oidc.user })
+router.get('/joinGame', requireAuth, (req, res) => {
+  res.render('joinGame', { user: req.oidc.user })
 })
 
 router.get('/login', (req, res) => {
