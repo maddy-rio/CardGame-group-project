@@ -9,7 +9,13 @@ router.get('/', async (req, res) => {
   try {
     const cards = await db.getCards()
     console.log(cards);
-    res.render('game', { cards })
+
+    // also send the black card details 
+    const card = {
+      id: 100,
+      phrase: 'hello world',
+    }
+    res.render('game', { cards, card })
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
@@ -36,7 +42,7 @@ router.get('/login', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   const displayName = req.body.display_name
-  console.log(displayName);
+  // add authentication here?
   res.redirect('/')
 })
 
