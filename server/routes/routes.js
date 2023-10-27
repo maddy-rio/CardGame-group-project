@@ -41,9 +41,8 @@ router.get('/answers', async (req, res) => {
     const blackCard = data1[0]
 
     const data2 = await db.getAnswers()
-    console.log(data2);
+    console.log(data2)
     const whiteCards = await db.getAnswers()
-
 
     //  id phrase
     // [
@@ -52,7 +51,7 @@ router.get('/answers', async (req, res) => {
     //     phrase: 'My coding skills are like a fine wine, they get better with __________.'
     //   }
     // ]
-    
+
     //  id response
     res.render('game', { blackCard, whiteCards })
   } catch (err) {
@@ -131,9 +130,8 @@ router.get('/logout', (req, res) => {
   res.oidc.logout({ returnTo: '/home' })
 })
 
-
 /**
- * 
+ *
  * test route for game without the authentication
  */
 router.get('/game1', async (req, res) => {
