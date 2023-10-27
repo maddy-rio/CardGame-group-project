@@ -28,7 +28,7 @@ router.use(
 //Main route
 router.get('/', async (req, res) => {
   try {
-    res.render('index', { user: req.oidc.user })
+    res.redirect('/answers')
   } catch (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   }
