@@ -55,7 +55,7 @@ body {
 }
 
 .card:active {
-  transform: translateY(-50px);
+  /* transform: translateY(-50px); */
 }
 
 .card-disabled {

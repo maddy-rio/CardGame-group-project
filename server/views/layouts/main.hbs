@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Dev Academy Phase 1 Express Boilerplate</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./header.css">
+    {{!-- GOOGLE FONTS  --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend:wght@500&family=Satisfy&display=swap" rel="stylesheet"></head>
 
-<head>
-  <title>Dev Academy Phase 1 Express Boilerplate</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./layout.css">
-  <link rel="stylesheet" href="./login.css">
-  <link rel="stylesheet" href="./header.css">
-  {{!-- GOOGLE FONTS  --}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend:wght@500&family=Satisfy&display=swap" rel="stylesheet"></head>
+  <body>
+    <div class="container">
+    {{> header}}
 
-<body>
-  <div class="container">
-  {{> header}}
-
-  {{{body}}}
-  </div>
-</body>
-
+    {{{body}}}
+    <button onclick="makeCardsDisappear()">hello world</button>
+    </div>
+  </body>
+  <script type="" src="./functions.js"></script>
 </html>
