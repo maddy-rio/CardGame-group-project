@@ -1,36 +1,43 @@
 .header {
-  /* margin-top: 10vh; */
-  /* display: flex; */
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  min-width: 100vw;
+
   display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: fit-content(100%);
   align-items: center;
-  width: 60vw;
-
-  padding: auto;
-  margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-
-  background-color: rgb(48, 22, 9);
-  color: white;
+  background-color: rgb(148, 56, 9);
   padding-inline: 1rem;
+  font-family: 'Lexend', sans-serif;
 }
 
 .header__text {
-
+  padding-inline: 3rem;
 }
-.aTagTitle {
 
-}
 .header__links {
-
-}
-.header-buttons {
-
+  margin-inline: 2rem;
 }
 
+.header-buttons button {
+  padding-inline: 3rem;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  margin-inline: 4px;
+  font-family: inherit;
+}
 
 
+.header-buttons button:hover {
+  transform: scale(1.15);
+  background-color: black;
+  color: white;
+  transition-duration: 400ms;
+}
 
-
+.aTagTitle {
+}
